@@ -18,7 +18,20 @@ subject { page }
 
     it { should have_selector('h1', text: 'Help') }
     it { should have_selector('title', text: full_title('Help')) }
+  
+  it do
+    visit help_path
+    click_link 'Rails Tutorial help page'
   end
+
+  it do
+    visit help_path
+    click_link 'Rails Tutorial book'
+  end
+
+  end
+
+
 
   describe "About page" do
     before { visit about_path}
